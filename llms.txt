@@ -1,0 +1,36 @@
+# The Petal Oscillator
+
+> A header-only C++17 oscillator in two modes: Complex, phase modulation whose ratio locks to the tuning (petal::Oscillator), and Analog, two band-limited oscillators with hard sync, unison and a sub (petal::AnalogOscillator). Any tuning of up to 64 notes, from a Scala .scl file or MTS-ESP. No dependencies, safe on an audio thread, MIT. It plays what Folium's oscillator plays, sample for sample before the declick on its reference build (Apple clang, arm64, -O2), with Folium's per-voice variation turned off.
+
+Read AGENTS.md first: the API, the rules every change keeps, and how to carry it into a project. A project needs include/petal/core.hpp, include/petal/declick.hpp and the header of the mode it uses.
+
+## Core
+
+- [AGENTS.md](AGENTS.md): the API, the rules, how to carry it into a project
+- [include/petal/core.hpp](include/petal/core.hpp): what both modes share, the tuning and the garden
+- [include/petal/oscillator.hpp](include/petal/oscillator.hpp): Complex
+- [include/petal/analog.hpp](include/petal/analog.hpp): Analog
+- [include/petal/declick.hpp](include/petal/declick.hpp): the onset window and DC blocker every mode runs last
+- [include/petal/scl.hpp](include/petal/scl.hpp): read a Scala .scl into a petal::Tuning
+- [include/petal/mts_esp.hpp](include/petal/mts_esp.hpp): a petal::Tuning from an MTS-ESP master
+
+## Prompts to paste into an assistant
+
+- [prompts/juce.md](prompts/juce.md): a JUCE synth, one oscillator per voice
+- [prompts/vcv-rack.md](prompts/vcv-rack.md): a VCV Rack module
+- [prompts/madronalib.md](prompts/madronalib.md): a madronalib console app, live and offline to WAV
+- [prompts/daisy.md](prompts/daisy.md): an Electrosmith Daisy
+
+## Reading
+
+- [README.md](README.md): what it is, why it exists, how to try it
+- [MODES.md](MODES.md): what holds each mode to Folium, how versions move
+- [CONTRIBUTING.md](CONTRIBUTING.md): the bar for a change
+- [CREDITS.md](CREDITS.md): the people and papers it stands on
+
+## Optional
+
+- [examples/render_wav.cpp](examples/render_wav.cpp): render one note of either mode to a WAV
+- [examples/juce/](examples/juce/): an eight voice JUCE instrument
+- [tests/check.sh](tests/check.sh): the check that holds the repo to Folium's renders
+- [tunings/](tunings/): five .scl scales
