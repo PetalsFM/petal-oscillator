@@ -12,7 +12,7 @@ The Petal Oscillator stands on other people's ideas. Where a technique came from
 
 ## The sine
 
-- Marc Le Brun, "Digital Waveshaping Synthesis", Journal of the Audio Engineering Society 27(4), 1979, pp. 250 to 266. Chebyshev waveshaping, which puts the sine's third harmonic, a fifth above the octave, 38 dB under the fundamental.
+- Marc Le Brun, "Digital Waveshaping Synthesis", Journal of the Audio Engineering Society 27(4), 1979, pp. 250 to 266. Chebyshev waveshaping, which puts the sine's third harmonic, a perfect fifth above the octave, 38 dB under the fundamental.
 
 The sine under it is my own: an odd 9th-order polynomial on the folded phase, fitted for the least harmonic energy, with the peak held at 1 and the wave smooth where the phase turns. On its own every harmonic sits more than 150 dB under the fundamental, and the waveshaping above puts the third back on purpose.
 
